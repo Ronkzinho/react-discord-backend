@@ -22,7 +22,7 @@ app.use(cors())
 
 
 app.post('/', function (req, res) { //endereco da requisicao onde e retornado hello world
-  bot.salvar(req.body.user, req.body.color)
+  bot.saveColor(req.body.user, req.body.color)
 })
 app.get('/', function (req, res) {
   res.send("OK")
