@@ -45,5 +45,10 @@ async function getColor(userID){
   var color = database2.color
   return color
 }
+async function listUsers(){
+  var users = bot.users.filter(c => !c.bot).map(c => c.id)
+  var nick = bot.users.filter(c => !c.bot).map(c => c.username)
+  return { users, nick }
+}
 
-module.exports = { saveColor, getColor, bot }
+module.exports = { saveColor, getColor, bot, listUsers }

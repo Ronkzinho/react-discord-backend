@@ -33,6 +33,11 @@ app.get("/user/:id", function(req, res) {
     res.send(result)
   })
 })
+app.get("/users", function(req, res) {
+  index.listUsers().then(async users => {
+    res.send(users)
+  })
+})
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT || 3000, function() {
